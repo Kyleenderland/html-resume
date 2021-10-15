@@ -18,7 +18,7 @@
 
   /* XXX: using px for very good precision control */
   --decorator-outer-offset-top: 10px;
-  --decorator-outer-offset-left: -5.5px;
+  --decorator-outer-offset-left: -5px;
   --decorator-border-width: 1px;
   --decorator-outer-dim: 9px;
   --decorator-border: 1px solid #ccc;
@@ -62,7 +62,7 @@ li{
   width: var(--sidebar-width);
   height: 100%;
   padding: 0.6in var(--sidebar-horizontal-padding);
-  background-color: #f2f2f2;
+  background: linear-gradient( to right, #eee, #ccc );
   font-size: 8.5pt;
 }
 
@@ -207,7 +207,7 @@ li{
   display: block;
   width: var(--decorator-outer-dim);
   height: var(--decorator-outer-dim);
-  border-radius: calc(var(--decorator-outer-dim) / 2);
+  transform: rotate(45deg);
   background-color: #fff;
 }
 
@@ -219,7 +219,7 @@ li{
   display: block;
   width: calc(var(--decorator-outer-dim) - (var(--decorator-border-width) * 2));
   height: calc(var(--decorator-outer-dim) - (var(--decorator-border-width) * 2));
-  border-radius: calc((var(--decorator-outer-dim) - (var(--decorator-border-width) * 2)) / 2);
+  transform: rotate(45deg);
   background-color: #555;
 }
 
@@ -297,7 +297,7 @@ li{
 #main li::before{
   position: relative;
   margin-left: -4.25pt;
-  content: '• ';
+  content: '⬥ ';
 }
 
 .details .concise ul{
@@ -350,6 +350,10 @@ li{
   padding: 0;
 }
 
+.side-block-li {
+  list-style-type: "◇ ";
+}
+
 #disclaimer{
   position: absolute;
   bottom: var(--sidebar-horizontal-padding);
@@ -358,11 +362,11 @@ li{
   font-style: italic;
   line-height: 1.1;
   text-align: right;
-  color: #777;
+  color: #333;
 }
 
 #disclaimer code{
-  color: #666;
+  color: black;
   font-family: "Source Code Pro";
   font-weight: 400;
   font-style: normal;
